@@ -5,7 +5,7 @@
 turboPDZ is a machine-learning framework that produces optimized photometric-redshift
 point estimates ($z_{\rm ml}$) and data-driven reliability scores ($r_{\rm ml}$) directly
 from redshift probability distribution functions (PDZs). The pipeline is survey-independent
-and compatible with any photo-$z$ method that delivers per-galaxy PDZs.
+and compatible with any photo-z method that delivers per-galaxy PDZs.
 
 ## Method
 
@@ -16,7 +16,7 @@ produces $z_{\rm ml}$. A second network, trained in log-space on the normalized 
 error, yields a calibrated uncertainty $\sigma_{\rm ml}$, from which the reliability score
 $r_{\rm ml}$ is derived via percentile ranking.
 
-The framework is demonstrated on the three independent photo-$z$ pipelines (DEmP, DNNz,
+The framework is demonstrated on the three independent photo-z pipelines (DEmP, DNNz,
 Mizuki) of the HSC-SSP PDR3, across both Wide and Deep/UltraDeep layers. $z_{\rm ml}$
 outperforms the catalog best estimate in scatter, bias, and outlier fraction across all
 six pipeline–layer combinations, while $r_{\rm ml}$ provides more efficient galaxy
@@ -25,7 +25,7 @@ filtering than standard catalog quality indicators.
 ## Reference
 
 Duarte & Marra, *Optimizing the extraction of information from redshift probability
-distribution functions*, PASJ (submitted).
+distribution functions*, [arXiv:2607.xxxxx](https://arxiv.org/abs/2607.xxxxx).
 
 ## Availability
 
