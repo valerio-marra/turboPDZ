@@ -25,7 +25,7 @@ filtering than standard catalog quality indicators.
 ## Reference
 
 Duarte & Marra, *Optimizing the extraction of information from redshift probability
-distribution functions*, [arXiv:2607.xxxxx](https://arxiv.org/abs/2607.xxxxx).
+distribution functions*, [arXiv:2607.26822](https://arxiv.org/abs/2607.26822).
 
 ## Availability
 
