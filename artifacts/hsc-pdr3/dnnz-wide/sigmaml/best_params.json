@@ -1,0 +1,15 @@
+{
+  "best_params": {
+    "activation": "relu",
+    "batch_size": 64,
+    "dropout_rate": 0.2996952525518782,
+    "explained_variance_pdf": 0.8911760633504148,
+    "learning_rate": 0.00010962944169429986,
+    "n_layers": 3,
+    "n_units_l0": 1024,
+    "n_units_l1": 896,
+    "n_units_l2": 448,
+    "weight_decay": 4.118919541853601e-06
+  },
+  "final_epochs": 139
+}

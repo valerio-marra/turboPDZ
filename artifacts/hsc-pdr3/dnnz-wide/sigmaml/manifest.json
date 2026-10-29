@@ -1,0 +1,61 @@
+{
+  "bundle_version": 1,
+  "cat": "dnnz",
+  "crossfit_scope": "weights_and_preprocessing_non_nested",
+  "features": {
+    "descriptor_columns": [
+      "mean",
+      "median",
+      "mode",
+      "std",
+      "skewness",
+      "kurtosis",
+      "main_peak_height",
+      "peak_height_ratio",
+      "peak_influence",
+      "distance_to_mode",
+      "has_second_peak"
+    ],
+    "descriptor_missing": "zero",
+    "extra_columns": [
+      "i_cmodel_mag"
+    ],
+    "missing": "raise",
+    "pdz_pca": true
+  },
+  "files": {
+    "best_params.json": "a2a367ad3b8964cb6db1c900a7e660c056d88b1978072f139cad4834bb1fe8c0",
+    "calibration.npz": "76d5edf642bcac7f9a223ee98706668e7c5e333c56bc05cb0f3f4cb937cfa733",
+    "grid.npz": "58da58dd0ff09044a7e3e028c79d42da2210b5bc5e0a2495d72fae1968fb2971",
+    "model.keras": "d5dd29a2f1814dc22505078c29e2c915c5b890632bc7c25fef9885d42012ca26",
+    "preprocessor.npz": "fc3b1ef2f7087e58368f378183708e30cdeecc5fe8e94bebd0211de00a4d21fa"
+  },
+  "fitted_model_unchanged": true,
+  "layer": "wide",
+  "legacy_sklearn_version": "1.8.0",
+  "parent_zml_manifest_hash": "5fa5a401df7f503e66245b527729d8f46d04b0763415b1ccb397a52bb19e84cd",
+  "protocol": "zml_oof_85__calibration_7p5__test_7p5",
+  "representation": "mass",
+  "seed": 50,
+  "software": {
+    "numpy": "1.26.4",
+    "optuna": "4.8.0",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.1",
+    "tensorflow": "2.19.1",
+    "turbopdz": "0.1.0.dev0"
+  },
+  "source_data_checksums": {
+    "calibration_curve": "1bfbcc7bc10c34826e19de343ffebf96",
+    "descriptors_parquet": "6e37b6a0f8c568023beec644b0cdf0c9",
+    "pdf_npz": "a479f69c2902df53d9eb6bfa37da71ad",
+    "reliability_artifacts": "3971d7e6ee4715835caf3f1afdeb8e81",
+    "table_parquet": "d24e856103bf606388bf7ea5c03c151b",
+    "zml_oof_predictions": "d9d59f1fb3ea3ce26b9625f209f1fd2a",
+    "zml_table_parquet": "50db8d40cb4e966063a4dd693a957970"
+  },
+  "source_run_tag": "sigmaml_v2-dnnz_wide-fixedhp_oof5_s50_homospecz_nozweights-916e8995",
+  "specz_selection": "homogeneous_true",
+  "track": "sigmaml"
+}

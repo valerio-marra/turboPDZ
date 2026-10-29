@@ -1,0 +1,34 @@
+{
+  "bundle_version": 1,
+  "cat": "mizuki",
+  "contains_catalog_extracts": false,
+  "files": {
+    "applicability.npz": "969d51cd1fbeeba3efa83d0fb9553e2bd520ae3dcbc76651de8cc80815ff90ed",
+    "sigmaml/best_params.json": "189753d61e5fa16ce911c248a9156e6563561bf28a034fa548c1e58bbdd0732b",
+    "sigmaml/calibration.npz": "1bc5691514bab7a1f6b3cbe2babb308e80651aec8688d2791e549763a0ff0cb2",
+    "sigmaml/grid.npz": "8939a3d547c9ed32c7332ab842d18760bc883e94dc32e1569350e01c5a0b7dcd",
+    "sigmaml/manifest.json": "c993a832433f0c0543c1930b1db7ee7d3c482b95bf1ded6cdfb98abb2c6b6049",
+    "sigmaml/model.keras": "4f18aa51a3abf6b9026a9e8a345916014fea3cd9c3747e13b578dd369fcf1bdc",
+    "sigmaml/preprocessor.npz": "25b372c9efab927fe80b69b1fd452f1e69dd6168996ef4c8a3394d9afc5b9541",
+    "zml/best_params.json": "821abaf6cd7eab3ddc09b76363c76f254c9545f95f82caa19a59e8f7d41ceb32",
+    "zml/grid.npz": "8939a3d547c9ed32c7332ab842d18760bc883e94dc32e1569350e01c5a0b7dcd",
+    "zml/manifest.json": "58794f5921a683d0155ee9ee73ad75d031f6238bd846c79657e5528b00130e1d",
+    "zml/model.keras": "d19af3284b5467c66586df6ebd375e9c307ca9ed8eeb88b2ea9d2a974a36e402",
+    "zml/preprocessor.npz": "41fb01d4703e665fe90d796b5a36595a529e5dcfdf3c23333670fcc4ae8d74da"
+  },
+  "kind": "combined-hsc-pdr3",
+  "layer": "wide",
+  "paper_run_tags": {
+    "sigmaml": "sigmaml_v2-mizuki_wide-fixedhp_oof5_s50_homospecz_nozweights-94997233",
+    "zml": "zml_v2-mizuki_wide-fixedhp_e96_s50-composite_nozweights_withimag_homospecz-2077139c"
+  },
+  "software": {
+    "numpy": "1.26.4",
+    "optuna": "4.8.0",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.1",
+    "tensorflow": "2.19.1",
+    "turbopdz": "0.1.0.dev0"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "name": "demp-wide",
+  "seed": 50,
+  "dataset": {
+    "adapter": "hsc_products",
+    "path": "../../../data/hsc-pdr3/demp_wide",
+    "reference_column": "photoz_best",
+    "z_max": 6
+  },
+  "features": {
+    "descriptor_groups": [
+      "location",
+      "shape",
+      "peaks"
+    ],
+    "extra_columns": [
+      "i_cmodel_mag"
+    ],
+    "descriptor_missing": "zero",
+    "pdz_pca": true
+  },
+  "training": {
+    "epochs": 113,
+    "params_path": "../../../artifacts/hsc-pdr3/demp-wide/zml/best_params.json",
+    "hpo": {
+      "mode": "reuse_parameters"
+    }
+  },
+  "sigmaml": {
+    "epochs": 153,
+    "params_path": "../../../artifacts/hsc-pdr3/demp-wide/sigmaml/best_params.json",
+    "hpo": {
+      "mode": "reuse_parameters"
+    },
+    "calibration": {
+      "n_bins": 14,
+      "smooth_bw_dex": 0.068
+    }
+  },
+  "applicability": {
+    "reference_path": "../../../artifacts/hsc-pdr3/demp-wide/applicability.npz"
+  },
+  "reproduction": {
+    "scope": "published hyperparameters and fixed calibration settings; frozen model bundles reproduce published inference",
+    "published_runs": {
+      "zml": "zml_v2-demp_wide-fixedhp_e113_s50-composite_nozweights_withimag_homospecz-64087dc9",
+      "sigmaml": "sigmaml_v2-demp_wide-fixedhp_oof5_s50_homospecz_nozweights-2bcc1b13"
+    }
+  }
+}

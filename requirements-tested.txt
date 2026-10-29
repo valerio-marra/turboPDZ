@@ -1,0 +1,12 @@
+# Direct dependencies used for the CPU release validation; not a full platform lock.
+numpy==1.26.4
+scipy==1.17.1
+pandas==2.3.3
+scikit-learn==1.8.0
+tensorflow==2.19.1
+optuna==4.8.0
+PyYAML==6.0.3
+Jinja2==3.1.6
+matplotlib==3.10.8
+papermill==2.7.0
+pytest==8.4.2

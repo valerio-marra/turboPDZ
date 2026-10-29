@@ -1,0 +1,43 @@
+name: package-tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      MPLBACKEND: Agg
+      TF_CPP_MIN_LOG_LEVEL: '2'
+      TF_NUM_INTEROP_THREADS: '1'
+      TF_NUM_INTRAOP_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - name: Build distributions
+        run: |
+          python -m pip install build
+          python -m build
+          python tools/check_distribution.py dist/*.whl dist/*.tar.gz
+      - name: Install the wheel with workflow dependencies
+        run: |
+          python -m pip install -c requirements-tested.txt "$(find dist -name '*.whl')[train,notebooks,hsc,test]"
+          python -m pip check
+          python -m ipykernel install --sys-prefix --name turbopdz
+      - name: Check imports outside the checkout
+        run: |
+          cd "$RUNNER_TEMP"
+          python "$GITHUB_WORKSPACE/tools/check_install.py"
+      - name: Run tests against the installed wheel
+        run: python -m pytest -q
+      - name: Execute the synthetic notebook workflow
+        run: bash examples/run-notebooks.sh configs/synthetic-optuna.yaml runs/ci-synthetic
+      - name: Keep diagnostics if a check fails
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: synthetic-diagnostics
+          path: runs/ci-synthetic/
+          if-no-files-found: ignore

@@ -1,0 +1,23 @@
+schema_version: 1
+name: custom-dataset
+python_paths: [..]  # explicit trusted checkout root for examples.extensions
+seed: 50
+dataset:
+  adapter: custom
+  callable: examples.extensions:load_custom_npz
+  kwargs:
+    path: ../data/custom-input.npz
+  reference_column: catalog_z
+features:
+  extra_columns: []
+  hooks:
+    - callable: examples.extensions:observed_color
+selection_objective:
+  name: custom
+  callable: examples.extensions:bias_aware_objective
+  kwargs:
+    bias_tolerance: 0.01
+training:
+  hpo:
+    mode: search
+    trials: 50

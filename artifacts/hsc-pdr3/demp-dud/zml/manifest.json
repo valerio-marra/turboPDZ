@@ -1,0 +1,53 @@
+{
+  "bundle_version": 1,
+  "cat": "demp",
+  "features": {
+    "descriptor_columns": [
+      "mean",
+      "median",
+      "mode",
+      "std",
+      "skewness",
+      "kurtosis",
+      "main_peak_height",
+      "peak_height_ratio",
+      "peak_influence",
+      "distance_to_mode",
+      "has_second_peak"
+    ],
+    "descriptor_missing": "zero",
+    "extra_columns": [
+      "i_cmodel_mag"
+    ],
+    "missing": "raise",
+    "pdz_pca": true
+  },
+  "files": {
+    "best_params.json": "c07da4c25b85a3eb5516af85706c509241e3345d0e22d9c55ceabca51f222703",
+    "grid.npz": "6414e29093607455578f9cb095a5437b4d3833c81febe15c8b0652a325eade70",
+    "model.keras": "0e99257b0a4fb7087193bf171bb130b9cf6e840e1ce76419184a9a27d9f1404a",
+    "preprocessor.npz": "0383297a6e721483f7e74a27d90b15f0fbc2a21fbe02dee91f932e3e2d5479f8"
+  },
+  "fitted_model_unchanged": true,
+  "layer": "dud",
+  "legacy_sklearn_version": "1.8.0",
+  "representation": "mass",
+  "seed": 50,
+  "software": {
+    "numpy": "1.26.4",
+    "optuna": "4.8.0",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.1",
+    "tensorflow": "2.19.1",
+    "turbopdz": "0.1.0.dev0"
+  },
+  "source_data_checksums": {
+    "descriptors_parquet": "53946702100da97c6605ce748afb49db",
+    "pdf_npz": "6b84ade615eed16cd01cf42477b9a780",
+    "table_parquet": "a723174ec8c930bf1d3e8a00572bfc0c"
+  },
+  "source_run_tag": "zml_v2-demp_dud-fixedhp_e77_s50-composite_nozweights_withimag_homospecz-4c4254dc",
+  "specz_selection": "homogeneous_true",
+  "track": "zml"
+}

@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "name": "dnnz-wide",
+  "seed": 50,
+  "dataset": {
+    "adapter": "hsc_products",
+    "path": "../../../data/hsc-pdr3/dnnz_wide",
+    "reference_column": "photoz_best",
+    "z_max": 7
+  },
+  "features": {
+    "descriptor_groups": [
+      "location",
+      "shape",
+      "peaks"
+    ],
+    "extra_columns": [
+      "i_cmodel_mag"
+    ],
+    "descriptor_missing": "zero",
+    "pdz_pca": true
+  },
+  "training": {
+    "epochs": 98,
+    "params_path": "../../../artifacts/hsc-pdr3/dnnz-wide/zml/best_params.json",
+    "hpo": {
+      "mode": "reuse_parameters"
+    }
+  },
+  "sigmaml": {
+    "epochs": 139,
+    "params_path": "../../../artifacts/hsc-pdr3/dnnz-wide/sigmaml/best_params.json",
+    "hpo": {
+      "mode": "reuse_parameters"
+    },
+    "calibration": {
+      "n_bins": 8,
+      "smooth_bw_dex": 0.112
+    }
+  },
+  "applicability": {
+    "reference_path": "../../../artifacts/hsc-pdr3/dnnz-wide/applicability.npz"
+  },
+  "reproduction": {
+    "scope": "published hyperparameters and fixed calibration settings; frozen model bundles reproduce published inference",
+    "published_runs": {
+      "zml": "zml_v2-dnnz_wide-fixedhp_e98_s50-composite_nozweights_withimag_homospecz-3cffdc16",
+      "sigmaml": "sigmaml_v2-dnnz_wide-fixedhp_oof5_s50_homospecz_nozweights-916e8995"
+    }
+  }
+}

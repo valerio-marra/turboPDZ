@@ -1,0 +1,15 @@
+{
+  "best_params": {
+    "activation": "elu",
+    "batch_size": 128,
+    "dropout_rate": 0.10724051465679867,
+    "explained_variance_pdf": 0.6769644099742896,
+    "learning_rate": 0.0014134542308607192,
+    "n_layers": 3,
+    "n_units_l0": 320,
+    "n_units_l1": 320,
+    "n_units_l2": 960,
+    "weight_decay": 0.0013498723443617165
+  },
+  "final_epochs": 127
+}

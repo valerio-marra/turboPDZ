@@ -1,0 +1,10 @@
+include CITATION.cff requirements-tested.txt CHANGELOG.md
+recursive-include environments *.txt *.md
+recursive-include tools *.py
+recursive-include notebooks *.ipynb
+recursive-include configs *.yaml
+recursive-include examples *.py *.yaml *.sh
+recursive-include recipes *.py *.json *.yaml *.ipynb *.md *.csv
+recursive-include cluster *.slurm *.md
+recursive-include docs *.md
+prune artifacts

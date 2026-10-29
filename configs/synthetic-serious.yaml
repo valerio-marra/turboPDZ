@@ -1,0 +1,48 @@
+# CPU-sized convergence experiment; this is not an astrophysical benchmark.
+# Gaussian PDZs are centered on noisy catalog estimates. Width and magnitude
+# carry no additional information about the injected redshift error.
+schema_version: 1
+name: synthetic-serious-convergence
+seed: 50
+dataset:
+  adapter: synthetic
+  reference_column: photoz_best
+  kwargs: {n_objects: 8000, n_grid: 96}
+features:
+  extra_columns: [i_cmodel_mag]
+splits:
+  development: 0.85
+  calibration: 0.075
+  test: 0.075
+  oof_folds: 5
+training:
+  epochs: 120
+  verbose: 0
+  patience: 18
+  reduce_lr_patience: 6
+  hpo:
+    mode: search
+    trials: 15  # Total attempted trials, including pruned trials.
+    search_space: &convergence_search
+      n_layers: {type: int, low: 1, high: 3}
+      units: {type: int, low: 32, high: 128, step: 32}
+      dropout_rate: {type: float, low: 0.0, high: 0.15}
+      learning_rate: {type: float, low: 0.0003, high: 0.003, log: true}
+      weight_decay: {type: float, low: 0.0000001, high: 0.0001, log: true}
+      activation: {type: categorical, choices: [relu, swish]}
+      batch_size: {type: categorical, choices: [128, 256]}
+      explained_variance_pdf: {type: float, low: 0.90, high: 0.995}
+sigmaml:
+  epochs: 120
+  loss: mae
+  hpo:
+    mode: search
+    trials: 15
+    search_space: *convergence_search
+  calibration: {n_bins: 20, smooth_bw_dex: 0.2}
+bootstrap:
+  resamples: 2000
+  confidence_level: 0.95
+applicability:
+  mag_bounds: [19, 25]
+  n_neighbors: 20

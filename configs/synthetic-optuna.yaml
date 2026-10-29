@@ -1,0 +1,37 @@
+schema_version: 1
+name: synthetic-optuna-tutorial
+seed: 50
+dataset:
+  adapter: synthetic
+  reference_column: photoz_best
+  kwargs: {n_objects: 160, n_grid: 40}
+features:
+  extra_columns: [i_cmodel_mag]
+training:
+  epochs: 3
+  verbose: 0
+  params: {n_layers: 1, n_units_l0: 24, batch_size: 32}
+  hpo:
+    mode: search
+    trials: 2  # smoke test only; use a larger budget for scientific training
+    search_space: &tutorial_search
+      n_layers: {type: categorical, choices: [1]}
+      units: {type: categorical, choices: [16, 24]}
+      dropout_rate: {type: float, low: 0.0, high: 0.15}
+      learning_rate: {type: float, low: 0.0003, high: 0.003, log: true}
+      batch_size: {type: categorical, choices: [16, 32]}
+      explained_variance_pdf: {type: float, low: 0.8, high: 0.95}
+sigmaml:
+  epochs: 3
+  loss: mae
+  hpo:
+    mode: search
+    trials: 2
+    search_space: *tutorial_search
+  calibration: {n_bins: 4, smooth_bw_dex: 0.2}
+bootstrap:
+  resamples: 50
+  confidence_level: 0.95
+applicability:
+  mag_bounds: [19, 25]
+  n_neighbors: 5

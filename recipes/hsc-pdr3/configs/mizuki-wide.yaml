@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "name": "mizuki-wide",
+  "seed": 50,
+  "dataset": {
+    "adapter": "hsc_products",
+    "path": "../../../data/hsc-pdr3/mizuki_wide",
+    "reference_column": "photoz_best",
+    "z_max": 7
+  },
+  "features": {
+    "descriptor_groups": [
+      "location",
+      "shape",
+      "peaks"
+    ],
+    "extra_columns": [
+      "i_cmodel_mag"
+    ],
+    "descriptor_missing": "zero",
+    "pdz_pca": true
+  },
+  "training": {
+    "epochs": 96,
+    "params_path": "../../../artifacts/hsc-pdr3/mizuki-wide/zml/best_params.json",
+    "hpo": {
+      "mode": "reuse_parameters"
+    }
+  },
+  "sigmaml": {
+    "epochs": 116,
+    "params_path": "../../../artifacts/hsc-pdr3/mizuki-wide/sigmaml/best_params.json",
+    "hpo": {
+      "mode": "reuse_parameters"
+    },
+    "calibration": {
+      "n_bins": 12,
+      "smooth_bw_dex": 0.037
+    }
+  },
+  "applicability": {
+    "reference_path": "../../../artifacts/hsc-pdr3/mizuki-wide/applicability.npz"
+  },
+  "reproduction": {
+    "scope": "published hyperparameters and fixed calibration settings; frozen model bundles reproduce published inference",
+    "published_runs": {
+      "zml": "zml_v2-mizuki_wide-fixedhp_e96_s50-composite_nozweights_withimag_homospecz-2077139c",
+      "sigmaml": "sigmaml_v2-mizuki_wide-fixedhp_oof5_s50_homospecz_nozweights-94997233"
+    }
+  }
+}

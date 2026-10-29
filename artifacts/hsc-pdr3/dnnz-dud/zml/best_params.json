@@ -1,0 +1,17 @@
+{
+  "best_params": {
+    "activation": "swish",
+    "batch_size": 128,
+    "dropout_rate": 0.12297736991377581,
+    "explained_variance_pdf": 0.7720564214058472,
+    "learning_rate": 0.0007927012581978545,
+    "n_layers": 5,
+    "n_units_l0": 960,
+    "n_units_l1": 448,
+    "n_units_l2": 896,
+    "n_units_l3": 256,
+    "n_units_l4": 832,
+    "weight_decay": 0.0006715336438517075
+  },
+  "final_epochs": 100
+}

@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying turboPDZ paper when using this software."
+title: turboPDZ
+type: software
+version: 0.1.0
+license: MIT
+repository-code: https://github.com/valerio-marra/turboPDZ
+authors:
+  - family-names: Duarte
+    given-names: Rodrigo
+  - family-names: Marra
+    given-names: Valerio
+preferred-citation:
+  type: article
+  title: Optimizing the extraction of information from redshift probability distribution functions
+  authors:
+    - family-names: Duarte
+      given-names: Rodrigo
+    - family-names: Marra
+      given-names: Valerio
+  year: 2026
+  journal: Publications of the Astronomical Society of Japan
+  notes: Accepted for publication.
+  url: https://arxiv.org/abs/2607.26822
