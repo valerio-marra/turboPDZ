@@ -8,6 +8,8 @@ from pathlib import Path
 
 
 def main() -> None:
+    for name in ("numpy", "scipy", "scikit-learn", "pyarrow"):
+        print(f"{name}: {importlib.metadata.version(name)}", flush=True)
     import turbopdz
 
     location = Path(turbopdz.__file__).resolve()

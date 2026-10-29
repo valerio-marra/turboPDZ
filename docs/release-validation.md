@@ -33,7 +33,7 @@ The six bundles are distributed directly in the repository, separately from
 Python packages. Source/model metadata and citation identify the accepted PASJ
 paper. The full-survey VAC remains a separate planned product.
 
-GitHub CI is configured to build/install the wheel, run tests, and execute the
-small synthetic notebook workflow on Linux. Its remote result is pending the
-push. GPU and production batch environments require their own validation.
+GitHub CI builds/installs the wheel, runs tests, and executes the small synthetic
+notebook workflow on Linux. See the [workflow results](https://github.com/valerio-marra/turboPDZ/actions/workflows/tests.yml)
+for the current status. GPU and production batch environments require their own validation.
 GitHub/PyPI publication and tagging are separate explicit release actions.

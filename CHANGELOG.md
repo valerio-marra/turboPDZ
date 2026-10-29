@@ -10,3 +10,4 @@
 - Six frozen HSC-SSP PDR3 pipeline/layer bundles with verified manifests,
   independent applicability references, and sampled numerical validation.
 - HSC recipes for reference bootstrap tables and search-pool sensitivity checks.
+- NumPy 1.x-compatible HSC dependencies, with PyArrow 25.0.1 in the tested environment.
